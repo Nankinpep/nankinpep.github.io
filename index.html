@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en" class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font for small icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Carousel slider Bootstrap 5</title>
+  </head>
+  <body>
+    <style>
+        .carousel-item {
+            height: 32rem;
+            background: #777;
+            color: black;
+            position: relative;
+            z-index: -9;
+        }
+        .container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-bottom: 50px;
+        }
+
+        .overlay-image {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.5;
+        }
+        .overview-section .item-title {
+          font-size: 1rem;
+        }
+    </style>
+    
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark text-light p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-map-marker-alt text-warning me-2"></small>
+                    <small> Condensed Matter Department, Faculty of Physics, Universitat de Barcelona, Barcelona, Spain</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-envelope text-warning me-2"></small>
+                    <small> josep.ferre@fmc.ub.edu</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center mx-n2">
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary text-warning" href="linkedin.com/in/josepferre"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link link-warning active" aria-current="page" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle link-warning " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Projects</a>
+              <ul class="dropdown-menu">
+                <li> <a href="#" class="dropdown-item">Blood state classification</a></li>
+                <li> <a href="#" class="dropdown-item">Angiogenesis </a></li>
+                <li> <a href="#" class="dropdown-item">Deep Learning: PINNs and DeepONet</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-warning " href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-warning" tableindex="-1" href="/html/aboutme.html" class="nav-link">
+                    About Me
+                </a>
+            </li>
+          </ul>
+    </nav>
+
+
+    <div class="container">
+      <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="overlay-image" style="background-image: url(/images/slide-1.jpg);"></div>
+            <img src="" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="overlay-image" style="background-image: url(/images/slide-2.jpg);"></div>
+            <img src="/images/me.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/images/me.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
+
+  <!-- What I do -->
+  <div class="container">
+    <div class="overview-section p-3 mt-5">
+      <hr class="bg-danger border-2 border-top border-danger">
+      <div class="container">
+        <h2 class="section-title font-weight-bold mb-3"> What I do </h2>
+        <div class="section-intro mb-5">
+          I have more than 10 years' experience building software for clients all over the world. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience? Check out my online resume and project portfolio.
+        </div>
+        <div class="row">
+          <div class="item col-6 col-lg-3">
+            <div class="item-inner">
+              <div class="item-icon">
+                <svg class="svg-inline--fa fa-js-square" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="js-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg>...</svg>
+                <!-- <i class="fab fa-js-square"></i> Font Awesome fontawesome.com -->
+              </div>
+              <h3 class="item-title">Biologic modelling</h3>
+              <div class="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ 
+                <a class="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a>
+              </div>
+            </div>
+            <!-- //item-inner -->
+          </div>
+          <!-- //item -->
+          <div class="item col-6 col-lg-3">
+            <div class="item-inner">
+              <div class="item-icon">
+                <svg class="svg-inline--fa fa-js-square" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="js-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg>...</svg>
+                <!-- <i class="fab fa-js-square"></i> Font Awesome fontawesome.com -->
+              </div>
+              <h3 class="item-title">Cell migration, proliferation and vasculature morfogenesis</h3>
+              <div class="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ 
+                <a class="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a>
+              </div>
+            </div>
+            <!-- //item-inner -->
+          </div>
+          <!-- //item -->
+          <div class="item col-6 col-lg-3">
+            <div class="item-inner">
+              <div class="item-icon">
+                <svg class="svg-inline--fa fa-js-square" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="js-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg>...</svg>
+                <!-- <i class="fab fa-js-square"></i> Font Awesome fontawesome.com -->
+              </div>
+              <h3 class="item-title">Dynamic Systems</h3>
+              <div class="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ 
+                <a class="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a>
+              </div>
+            </div>
+            <!-- //item-inner -->
+          </div>
+          <!-- //item -->
+          <div class="item col-6 col-lg-3">
+            <div class="item-inner">
+              <div class="item-icon">
+                <svg class="svg-inline--fa fa-js-square" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="js-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg>...</svg>
+                <!-- <i class="fab fa-js-square"></i> Font Awesome fontawesome.com -->
+              </div>
+              <h3 class="item-title">Interface phenomena</h3>
+              <div class="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ 
+                <a class="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a>
+              </div>
+            </div>
+            <!-- //item-inner -->
+          </div>
+          <!-- //item -->
+          <div class="item col-6 col-lg-3">
+            <div class="item-inner">
+              <div class="item-icon">
+                <svg class="svg-inline--fa fa-js-square" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="js-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg>...</svg>
+                <!-- <i class="fab fa-js-square"></i> Font Awesome fontawesome.com -->
+              </div>
+              <h3 class="item-title">Analysis, coding and simulations </h3>
+              <div class="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ 
+                <a class="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a>
+              </div>
+            </div>
+            <!-- //item-inner -->
+          </div>
+          <!-- //item -->
+        </div>
+      </div>
+      <hr class="bg-danger border-2 border-top border-danger">  
+    </div>
+  </div>
+  <!-- Finish of what I do -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+
+  <footer class="bd-footer py-5 mt-5 bg-light">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning"> Josep Ferré Torres</h5>
+                <p>Brief description with rows and columns to organize my footer content</p>
+            </div>
+            <div class="col mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact information</h5>
+                <p>
+                    <i class="fas fa-home mr-3"></i> Condensed Matter Physics Department, Faculty of Physics, Universitat de Barcelona
+                </p>
+                <p>
+                    <i class="fas fa-envelope mr-3"></i> josep.ferre@fmc.ub.edu
+                </p>
+            </div>
+            <div class="col">
+                <h5>Contact</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="#">Discussions</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#">Slack</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+  
+</html>
