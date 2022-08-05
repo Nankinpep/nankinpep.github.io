@@ -37,6 +37,14 @@ section h1 {
     margin-bottom: 20px;
 }
 
+section h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: darkgoldenrod;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
 section p {
     font-size: 16px;
     font-weight: 300;
@@ -54,8 +62,8 @@ section p {
 }
 
 #hero img {
-    max-width: 130% !important;
-    width: 130%;
+    max-width: 120% !important;
+    width: 120%;
 }
 
 #hero .card {
@@ -65,8 +73,8 @@ section p {
 }
 
 #hero .icon {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 20px;
 }
 
