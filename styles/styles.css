@@ -1,3 +1,30 @@
+.carousel-item {
+    height: 32rem;
+    background: #777;
+    color: black;
+    position: relative;
+    z-index: -9;
+}
+
+.overlay-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+}
+.overview-section .item-title {
+  font-size: 1rem;
+}
+
+.height-carousel {
+  background-color: black;
+  height: 400px;
+}
+
 body {
     display: block;
     overflow-x: hidden;
