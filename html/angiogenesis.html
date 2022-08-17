@@ -23,11 +23,12 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle link-warning " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Projects</a>
               <ul class="dropdown-menu">
-                <li> <a href="/html/blood_classificaiton.html" class="dropdown-item">Blood state classification</a></li>
                 <li> <a href="/html/angiogenesis.html" class="dropdown-item">Angiogenesis </a></li>
+                <li> <a href="/html/blood_classificaiton.html" class="dropdown-item">Blood state classification</a></li>
                 <li> <a href="#" class="dropdown-item">Deep Learning: PINNs and DeepONet</a></li>
+                <li> <a href="#" class="dropdown-item">AWS: IoT architecture for a B2C device</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                <li><a class="dropdown-item" href="#">Python API</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -50,7 +51,7 @@
             <div class="container pt-0">
               <div class="row">
                   <div class="col">
-                      <h1>Mathematical modelisation of <br> chemotactic cell migration through an extracellular matrix</h1>
+                      <h1>Mathematical modelisation of chemotactic cell migration through an extracellular matrix</h1>
                   </div>
               </div>
               <div class="row justify-content-center">
@@ -58,12 +59,12 @@
                         <p> Cell migration plays a fundamental role in veins and arteries development, i.e. vascular development and angiogenesis. Despite cell movement being first seen more than 300 years ago, the mechanisms and identification of the influencing factors behind cell movement are an experimental challenge. In this project, we combined a microfluidic platform that reproduces chemotactic cell migration through the extracellular matrix and a biophysical modelisation through phase-field modelling.</p>                        
                         <p> We match theory and experiment by scrutinising the influence of the coupling between the cells and the extracellular matrix. Our model simulates cell migration taking into account the extracellular matrix structure and the distribution of the biological factors. </p>
                         <p>Our findings highlight the inherent nontrivial role of the extracellular structure in the sprouting-invasion dynamics and morphologies.</p>
-                    </div>
+                  </div>
               </div>
               <div class="row justify-content-center mt-2">
                 <div class="col-md-8">
                   <figure class="figure">
-                    <img src="/images/ang1_overview_project.png" alt="ECM initial condition" class="img-fluid">
+                    <img src="/images/angiogenesis/ang1_overview_project.png" alt="Overview of the project in three images" class="img-fluid">
                   </figure>         
                 </div>
               </div>
@@ -86,12 +87,12 @@
                 </div>
                 <div class="row mt-3 align-items-center">
                   <div class="col-md-6">
-                      <h2>Extracellular matrix: <br> fibrin-based hydrogel</h2>
+                      <h2>Extracellular matrix: fibrin-based hydrogel</h2>
                       <p>Because of the strong interaction between cells and their environment, hydrogels have become of tremendous interest, given their biocompatibility, softness and water content. Used as an extracellular matrix, it provides a porous landscape for cells to migrate and invade. Moreover, given its water content, it is possible to solubilise biological factors to promote or inhibit cell invasion and differentiation.</p>
                       <p>The modelled cell environment is the digitalisation of a confocal microscopy image of the hydrogel (using NHS-rhodamine for fluorescence) plus an additional background of the distribution of the biological factors. The scale bar is 200&#956m.</p>
                   </div>
                   <div class="col-md-6">
-                      <img src="/images/ang2_ECM_modelECM.png" alt="ECM initial condition" class="img-fluid"/>                    
+                      <img src="/images/angiogenesis/ang2_ECM_modelECM.png" alt="ECM initial condition" class="img-fluid"/>                    
                   </div>
               </div>
               <div class="row mt-5">
@@ -101,19 +102,19 @@
                   <div class="col">
                       <h3>The model dynamics</h3>
                       <p>In this project, we proposed a dynamic phase-field model to predict and describe the migration of a collection of cells due to chemotactic factors through the environment. Our formulation uses a single parameter (&#966), and a partial differential equation describes the dynamics of the system:</p>                        
-                      <img src="/images/ang3_PDE.png" alt="PDE describing dynamics" class="img-fluid"/>
+                      <img src="/images/angiogenesis/ang3_PDE.png" alt="PDE describing dynamics" class="img-fluid"/>
                       <p>Because the migration of ECs is oriented and regulated mechanically and chemically, we assume that the tip cell directs migration towards a clearer path in terms of extracellular matrix presence. Moreover, cells collective migration also involves the degradation of the extracellular matrix to enable the progression of cells. For this reason, we extended the model allowing tip cells to degrade the extracellular matrix by producing matrix metalloproteinases (MMPs).</p>
                   </div>
                   <div class="col">
                       <h4>Environment degradation</h4>
-                      <img src="/images/ang4_degradation.png" alt="Degradation of ECM" class="img-fluid"/>
+                      <img src="/images/angiogenesis/ang4_degradation.png" alt="Degradation of ECM" class="img-fluid"/>
                       <p>Environment degradation for a static tip through multiple time steps (&#916t)</p>
                   </div>
               </div>
 
               <div class="row align-items-center">
                   <div class="col">
-                      <img src="/images/ang5_staticECM.png" alt="Static environment" class="img-fluid"/>
+                      <img src="/images/angiogenesis/ang5_staticECM.png" alt="Static environment" class="img-fluid"/>
                   </div>
                   <div class="col">
                       <h3>Static environment</h3>
@@ -122,7 +123,7 @@
               </div>
               <div class="row align-items-center">
                   <div class="col">
-                      <img src="/images/ang6_dynamicECMmodification.png" alt="Dynamic environment" class="img-fluid"/>
+                      <img src="/images/angiogenesis/ang6_dynamicECMmodification.png" alt="Dynamic environment" class="img-fluid"/>
                   </div>
                   <div class="col">
                       <h3>Dynamic environment: degradation</h3>
@@ -173,6 +174,25 @@
             </div>
           </section>
           <!-- End Hero section -->
+          
+          <!-- REFERENCES -->
+          <section>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8">
+                  <h3>REFERENCES</h3>                
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <ol>
+                    <li>Ferre-Torres, J., Noguera-Monteagudo, A., Lopez-Canosa, A., Romero-Arias, J. R., Barrio, R., Castaño, O., & Hernandez-Machado, A. (2022). A mathematical model for chemotactic endothelial cell migration through a fibrin-based extracellular matrix.</li>
+                  </ol>       
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- END REFERENCES -->
           <!-- Project section -->
         <!--
           <section>
