@@ -58,14 +58,16 @@
                 <div class="col">
                   <p> We can characterise fluids rheologically using a microfluidic-based chip rheometer. Traditional rheometers require a considerable amount of fluid volume, which is not suitable for performing measurements of blood. Besides, blood is a complex fluid with shear-thinning behaviour for healthy patients. For a given geometry, the higher the velocity, the lower the viscosity, similar to ketchup and toothpaste. </p>
                   <p>In this project, we have used machine learning methods to classify blood into different conditions: healthy and non-healthy blood (iron-deficiency anaemia, beta thalassemia, hereditary spherocytosis, sickle cell, vitamin B12 deficiency, mechanical hemolysis and hepatic cirrhosis).</p>
+                  <p style="color: blue"><em>This project is currently on its last stages; results will be uploaded as soon as I have written the report for my PhD thesis.</em></p>
                 </div>
+                
+                <h2 style="background-color: pink;"> PAGE UNDER CONSTRUCTION </h2>  
               </div>
               <div class="row justify-content-center mt-2">
                 <div class="col-md-8">
                   <figure class="figure">
-                    <img src="" alt="Project overview" class="img-fluid">
-                  </figure>     
-                  <h2 style="background-color: pink;"> PAGE UNDER CONSTRUCTION </h2>    
+                    <img src="/images/blood_classification/bc_consumables-horizontal.jpeg" alt="Project overview" class="img-fluid">
+                  </figure>       
                 </div>
               </div>
               <div class="row text-end">
@@ -84,15 +86,16 @@
                         <p></p>                        
                     </div>
                 </div>
-                <div class="row mt-3 align-items-center">
+                <div class="row mt-3 justify-content-center">
                   <div class="col-md-6">
                       <h2>Microfluidic Rheometer</h2>
                       <p>We obtained experimental data from multiple blood donors and patients using an in-house microfluidic device. By setting a pressure difference in a microfluidic channel connected to a blood reservoir, we can make the fluid flow through the channel and measure the time it reaches a given position.</p>
                       <p>The geometry of the microfluidic channel, the pressure difference and the viscosity of the blood sample are all variables that affect the fluid flow. Moreover, the microfluidic channel is such that the blood velocity is constant at a constant pressure difference. Therefore, to measure different speeds, we must change the pressure difference.</p>
                       <p>However, this microfluidic device's main difference is that it can characterise fluids by analysing the fluid-front velocity, which is why it needs much less volume. Therefore, given the shear thinning nature of blood, we cannot use velocity as a variable to describe our system. The velocity and viscosity of blood change depending on the shear applied. We need to use a variable that considers all viscosity-dependent variables; the fluid front shear rate. The fluid front shear rate, defined as the mean front velocity divided by the height of the channel (the smallest, or characteristic, dimension of the microfluidic channel), completely characterises the conditions of our system and experiments.</p>
                   </div>
-                  <div class="col-md-6">
-                      <img src="" alt="Lab rheometer" class="img-fluid"/>                    
+                  <div class="class col-md-2"></div>
+                  <div class="col-md-4">
+                      <img src="/images/blood_classification/bc_lab-microfluidic-rheometer.png" alt="Lab rheometer" class="img-fluid" style="max-height: 500px;"/>                    
                   </div>
               </div>
               <div class="row mt-5">
@@ -186,10 +189,10 @@
                           <tr>
                             <th scope="row">Classification Tree</th>
                             <td>13</td>
-                            <td>4</td>
-                            <td>7</td>
-                            <td>12</td>
-                            <td>0.69</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>15</td>
+                            <td>0.78</td>
                           </tr>
                           <tr>
                             <th scope="row">Random Forest</th>
@@ -201,9 +204,19 @@
                           </tr>
                         </tbody>
                       </table>
-                      <img src="" alt="Accuracies of multiple ML models" class="img-fluid"/>
-                      <p></p>
                   </div>
+                  <div class="row align-items-center">
+                    <div class="col">
+                        <img src="/images/blood_classification/bc_decision_tree_boundary_depth1.png" alt="Static environment" class="img-fluid"/>
+                    </div>
+                    <div class="col">
+                        <h3>Boundaries of Classification Tree (depth 1)</h3>
+                        <p>Decision Trees are among the simplest algorithms to understand, are easy to visualize and implement, and do not require much computation. While simple and easy to interpret, they can classify categories from datasets that a single line cannot separate. The decision tree uses Entropy to find the split point and the feature to split on. </p>
+                        <p>These decision boundaries are always parallel to the axis because it splits the data iteratively based on a feature value - and this value remains constant throughout the boundary. Therefore, it is helpful to take two features at a time to plot the 2D graphs to visualise results and contours in 2D.</p>
+                        <p>In the example on the left, the first decision boundary is at n_{htc}=0.012. Since now we have two decision regions, our tree ramifies to two new different nodes of the tree for each region. And regions are iteratively split until regions contain a significant majority of one class over the rest.</p>
+                        <p>However, Decision Trees present many disadvantages. We will easily develop an over-fitted model if we do not set a stopping criterion - tree-depth, minimum of instances per node, etc. Besides, decision trees are sensitive to data rotation as they make parallel-axis decisions.</p>
+                    </div>
+                </div>
               </div>
               <!--
               <div class="row align-items-center">
