@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CloudArchitectureDesign</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" href="/styles/styles.css">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <!-- Font for small icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">    
+    </head>
+
+    <body>
+      <!-- Navbar -->
+      <nav class="navbar sticky-top navbar-dark bg-dark">
+        <div class="container">
+          <ul class="nav nav-tabs me-auto">
+            <li class="nav-item">
+              <a class="nav-link link-warning" aria-current="page" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle link-warning " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Projects</a>
+              <ul class="dropdown-menu">
+                <li> <a href="/html/angiogenesis.html" class="dropdown-item">Angiogenesis </a></li>
+                <li> <a href="/html/blood_classification.html" class="dropdown-item">Blood state classification</a></li>
+                <li> <a href="#" class="dropdown-item">Deep Learning: PINNs and DeepONet</a></li>
+                <li> <a href="/html/aws_cloudarchitecturedesign.html" class="dropdown-item">AWS: IoT architecture design</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Python API</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-warning " href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-warning" tableindex="-1" href="/html/aboutme.html" class="nav-link">
+                    About Me
+                </a>
+            </li>
+          </ul>
+          <a class="navbar-brand" href="#" style="color: white">AWS IoT Architecture Design
+            <span class='bi bi-arrow-up' style='color: red'></span></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+          <!-- Hero section 1 -->
+          <section id="hero">
+            <div class="container pt-0">
+              <div class="row">
+                  <div class="col">
+                      <h1>Cloud Architecture Design for IoT devices: microfluidic rheometers and machine learning</h1>
+                  </div>
+              </div>
+              <div class="row justify-content-center">
+                  <div class="col">
+                        <p>We want to design a cloud architecture to collect, process and respond to requests from IoT devices. These requests will come from devices in the same network (for instance, a Hospital) and will provide raw data to be processed by a pre-trained model. The main idea of the cloud is to be able to store all measurements together to improve the machine learning model easily.</p>
+                        <p>The goal is to build a system that is robust and scalable, i.e. we need an infrastructure that can recover from failure and that can provide service to multiple devices.</p>
+                  </div>
+              </div>
+              <div class="row justify-content-center mt-2">
+                <div class="col-md-9">
+                  <figure class="figure">
+                    <img src="/images/aws_architecture/aws_IoT_connection_overview.png" alt="Simplified overview of the architecture" class="img-fluid">
+                  </figure>         
+                </div>
+              </div>
+              <div class="row text-end">
+                <p>
+                  <i><strong>DISCLAIMER:</strong> the following architecture has never been implemented nor deployed. It was thought of as a proof of concept.
+                  </i>
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- End Hero section -->
+
+          <!-- About the project section 1 -->
+          <section id="project">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1>Let's dive into the project</h1>
+                        <p></p>                        
+                    
+                    </div>
+                </div>
+              <div class="row mt-5">
+                <h2>Functionalities</h2>
+              </div>
+              <div class="row mt-3 mb-5">
+                  <div class="col">
+                    <p>The cloud platform is designed to support our hybrid deployment, the IoT device measurements and machine learning models. Therefore, the cloud platform should give service not only to the IoT devices but also to potential users and clients. The cloud platform's main functionalities are:</p>
+                    <ul class="fs-5">
+                      <li>The IoT device layer: a Raspberry PI and an ESP32 combined as hardware connected with AWS IoT Core.</li>
+                      <li>A layer of connectivity in IoT Core allows managing the communication between the IoT device (RPi) with the cloud platform - via MQTT for individual authentication.</li>
+                      <li>Pre-processing layer that saves data in a data lake and corresponding databases and prepares data for posterior processing.</li>
+                      <li>Machine Learning and processing layer for the generation of results.</li>
+                    </ul>
+                  </div>
+              </div>
+              <div class="row mt-3 align-items-center">
+                <div class="col-md-6">
+                    <h2>Hybrid deployment and IoT Device</h2>
+                    <p>To provide this service, it is possible to use a Model as a Web Endpoint and deploy it using gunicorn and mlflow. To deploy the app or service, it is possible to use Heroku, a cloud platform that works well for hosting Python applications. However, we want everything with the same cloud provider to simplify maintenance. </p>
+                    <p>On the other hand, we can also present the models for processing the requests as serverless functions. These serverless technologies allow us to not worry about maintaining the servers as the cloud platform is responsible for provisioning servers, scaling up more machines to match demand and managing load balancers according to requests. The main concern at the start-up level for serverless technologies is latency because it can impact customer experience.</p>
+                </div>
+                <div class="col-md-6">
+                  <h2>Deployment of a new device</h2>
+                    <p>Each device needs to have installed/loaded the required firmware with the corresponding certificates to guarantee security and confidentiality of communications. Then, the device needs to be connected to the facility's WiFi - the credentials of the wireless connection are the unique specification settings that need to be configured to connect to the internet.</p>
+                    <p>Once it is connected to the internet, a unique authentication certificate is downloaded by using the MQTT connection service. From this point, with the authentication certificate saved and the internet connection, the device is ready to perform blood viscosity measurements and send them to the cloud platform for processing and receiving the model results.</p>                    
+                </div>
+              </div>
+              <div class="row mt-5">
+                <h2>Architecture Design</h2>
+              </div>
+              <div class="row mt-3">
+                <p>The architecture presented here has many services. It is advisable to use Terraform to deploy all these services. Terraform allows writing the infrastructure as code using declarative configuration files.</p>
+              </div>
+              <div class="row mt-3 mb-5">
+                  <div class="col">
+                    <img src="/images/aws_architecture/aws_Architecture_design.png" alt="Cloud Architecture Design" class="img-fluid"/>
+                  </div>
+              </div>
+            </div>
+          </section>
+          <!-- End About the project section -->
+
+          <!-- Hero section -->
+          <section id="hero">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-12">
+                  <h3>Services</h3>                
+                </div>
+              </div>
+              <div class="row cards mt-2 justify-content-center">
+                <div class="col-md-3 dflex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <img src="/images/aws_architecture/aws_IoTCore-icon.png" alt="IoTCore" class="icon"/>
+                          <h5 class="card-title">AWS IoT Core</h5>
+                          <p class="card-text">supports device connections that use the MQTT protocol allowing for mutual authentication and encryption at all endpoints so that data is never exchanged between devices and IoT Core without verified identity.</p>
+                      </div>
+                    </div>
+                </div>  
+                <div class="col-md-3 dflex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <img src="/images/aws_architecture/aws_APIGateway-icon.png" alt="APIGateway" class="icon"/>
+                          <h5 class="card-title">AWS API Gateway</h5>
+                          <p class="card-text">A service to access AWS cloud that can manage and balance network traffic, directing requests to specific resources based on the endpoints requested.</p>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-md-3 dflex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <img src="/images/aws_architecture/aws_AmazonCognito-icon.png" alt="AmazonCognito" class="icon"/>
+                          <h5 class="card-title">Amazon Cognito</h5>
+                          <p class="card-text">Allows direct sign-in features with a user name and password with user pools and identity pools; provides authentication, authorization and user management for the application backend.</p>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-md-3 dflex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <img src="/images/aws_architecture/aws_Lambda-icon.png" alt="AWS Lambda" class="icon"/>
+                          <h5 class="card-title">AWS Lambda</h5>
+                          <p class="card-text">A serverless service that allows to trigger functionalities and execute code.</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="row cards mt-2 justify-content-center">
+                <div class="col-md-3 dflex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <img src="/images/aws_architecture/aws_S3-icon.png" alt="Amazon S3" class="icon"/>
+                          <h5 class="card-title">S3 Bucket</h5>
+                          <p class="card-text">A : cloud storage service that, in our architecture, is used as a data lake for all messages and logs.</p>
+                      </div>
+                    </div>
+                </div>  
+                <div class="col-md-3 dflex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <img src="/images/aws_architecture/aws_AmazonDynamoDB-icon.png" alt="DynamoDB" class="icon"/>
+                          <h5 class="card-title">Amazon DynamoDB</h5>
+                          <p class="card-text">A fully managed NoSQL Database.</p>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-md-3 dflex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <img src="/images/aws_architecture/aws_AmazonAurora-icon.png" alt="Amazon Aurora" class="icon"/>
+                          <h5 class="card-title">Amazon Aurora</h5>
+                          <p class="card-text">A relational database engine for high performance and scalability.</p>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-md-3 dflex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <img src="/images/aws_architecture/aws_Sagemaker-icon.png" alt="AWS SageMaker" class="icon"/>
+                          <h5 class="card-title">AWS SageMaker</h5>
+                          <p class="card-text">A fully managed machine learning service that allows to build and train machine learning models quickly and then directly deploy them into a production environment.</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- End Hero section -->
+
+          <!-- Project section -->
+        <!--
+          <section>
+            <div class="container">
+                <div class="row align-items-center projects">
+                    <div class="col">
+                        <h1>Projects</h1>
+                        <p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.s</p>                        
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="card mb-3">
+                            <img src="/images/ECM_initial_condition.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Static environment</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Dynamic degradation</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                            <img src="/images/Fig2_A_Fig2_synthesized_ECM_centerstack.png" class="card-img-bottom" alt="...">
+                            </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+        -->
+          <!-- Project section --> 
+
+          <!-- Contact us -->
+          <section id="contact">
+            <div class="container">
+                    <div class="col">
+                      <p>
+                        If you want to know more about this work, extend it or collaborate
+                      </p>
+                      <h1>Contact me</h1>
+                      <p>
+                        <i class="fas fa-envelope mr-3"></i> josep.ferre@fmc.ub.edu
+                      </p>
+                    </div>
+                </div>
+            </div>
+          </section>
+          <!-- End Contact us -->
+
+    </body>
+</html>

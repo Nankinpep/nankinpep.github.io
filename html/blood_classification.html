@@ -1,0 +1,366 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Blood state classification project</title>
+                <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" href="/styles/styles.css">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <!-- Font for small icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">    
+    </head>
+
+    <body>
+      <!-- Navbar -->
+      <nav class="navbar sticky-top navbar-dark bg-dark">
+        <div class="container">
+          <ul class="nav nav-tabs me-auto">
+            <li class="nav-item">
+              <a class="nav-link link-warning" aria-current="page" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle link-warning " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Projects</a>
+              <ul class="dropdown-menu">
+                <li> <a href="/html/angiogenesis.html" class="dropdown-item">Angiogenesis </a></li>
+                <li> <a href="/html/blood_classification.html" class="dropdown-item">Blood state classification</a></li>
+                <li> <a href="#" class="dropdown-item">Deep Learning: PINNs and DeepONet</a></li>
+                <li> <a href="/html/aws_cloudarchitecturedesign.html" class="dropdown-item">AWS: IoT architecture design</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Python API</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-warning " href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-warning" tableindex="-1" href="/html/aboutme.html" class="nav-link">
+                    About Me
+                </a>
+            </li>
+          </ul>
+          <a class="navbar-brand" href="#" style="color: white">Blood state classification project
+          <span class='bi bi-arrow-up' style='color: red'></span></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+          <!-- Hero section 1 -->
+          <section id="hero">
+            <div class="container pt-5">
+              <div class="row">
+                  <div class="col">
+                      <h1>Machine learning for blood state classification</h1>
+                  </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col">
+                  <p> We can characterise fluids rheologically using a microfluidic-based chip rheometer. Traditional rheometers require a considerable amount of fluid volume, which is not suitable for performing measurements of blood. Besides, blood is a complex fluid with shear-thinning behaviour for healthy patients. For a given geometry, the higher the velocity, the lower the viscosity, similar to ketchup and toothpaste. </p>
+                  <p>In this project, we have used machine learning methods to classify blood into different conditions: healthy and non-healthy blood (iron-deficiency anaemia, beta thalassemia, hereditary spherocytosis, sickle cell, vitamin B12 deficiency, mechanical hemolysis and hepatic cirrhosis).</p>
+                  <p style="color: blue"><em>This project is currently on its last stages; results will be uploaded as soon as I have written the report for my PhD thesis.</em></p>
+                </div>
+                
+                <h2 style="background-color: pink;"> PAGE UNDER CONSTRUCTION </h2>  
+              </div>
+              <div class="row justify-content-center mt-2">
+                <div class="col-md-8">
+                  <figure class="figure">
+                    <img src="/images/blood_classification/bc_consumables-horizontal.jpeg" alt="Project overview" class="img-fluid">
+                  </figure>       
+                </div>
+              </div>
+              <div class="row text-end">
+                <p></p>
+              </div>
+            </div>
+          </section>
+          <!-- End Hero section -->
+
+          <!-- About the project section 1 -->
+          <section id="project">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1>Let's dive into the project</h1>
+                        <p></p>                        
+                    </div>
+                </div>
+                <div class="row mt-3 justify-content-center">
+                  <div class="col-md-6">
+                      <h2>Microfluidic Rheometer</h2>
+                      <p>We obtained experimental data from multiple blood donors and patients using an in-house microfluidic device. By setting a pressure difference in a microfluidic channel connected to a blood reservoir, we can make the fluid flow through the channel and measure the time it reaches a given position.</p>
+                      <p>The geometry of the microfluidic channel, the pressure difference and the viscosity of the blood sample are all variables that affect the fluid flow. Moreover, the microfluidic channel is such that the blood velocity is constant at a constant pressure difference. Therefore, to measure different speeds, we must change the pressure difference.</p>
+                      <p>However, this microfluidic device's main difference is that it can characterise fluids by analysing the fluid-front velocity, which is why it needs much less volume. Therefore, given the shear thinning nature of blood, we cannot use velocity as a variable to describe our system. The velocity and viscosity of blood change depending on the shear applied. We need to use a variable that considers all viscosity-dependent variables; the fluid front shear rate. The fluid front shear rate, defined as the mean front velocity divided by the height of the channel (the smallest, or characteristic, dimension of the microfluidic channel), completely characterises the conditions of our system and experiments.</p>
+                  </div>
+                  <div class="class col-md-2"></div>
+                  <div class="col-md-4">
+                      <img src="/images/blood_classification/bc_lab-microfluidic-rheometer.png" alt="Lab rheometer" class="img-fluid" style="max-height: 500px;"/>                    
+                  </div>
+              </div>
+              <div class="row mt-5">
+                <h2>The Model</h2>
+              </div>
+              <div class="row mt-3 mb-5">
+                  <div class="col">
+                      <h3>The mathematical model</h3>
+                      <p>To characterize blood, we use a power-law model (the Ostwald-De Waele Power-Law model) between its viscosity and the shear rate with an m prefactor obtained experimentally. Using this modelization, newtonian fluids like plasma correspond to n=1. In the case of shear-thinning behaviour, for instance, healthy blood, n should be lower than 1. </p>
+                      <img src="/images/blood_classification/bc_powerlaw.png" alt="Ostwald-De Waele Power-Law model" class="img-fluid"/>
+                      <p><br>Then, to characterize different blood conditions, we need to remove the effect of plasma and hematocrit levels on viscosity. We can do this by normalizing the blood viscosity with respect to the plasma viscosity and obtaining an effective viscosity for blood. Further, we normalize the effective viscosity with respect to the maximum value of hematocrit. We normalize with respect to the maximum value of hematocrit because it is the case for which we will have the most impact on the state of red blood cells. After all, it is where we will have more red blood cells.</p>
+                      <img src="/images/blood_classification/bc_htcnormalization.png" alt="Hematocrit normalization equation" class="img-fluid "/>
+                      <p><br>It is worth mentioning that the major experimental error comes from the dynamic contact angle and capillary pressure of the flowing fluid. This is because capillary pressure is a static measurement and the dynamic contact angle depend on factors that we cannot control.</p>
+                  </div>
+                  <div class="col">
+                    <h3><br></h3>
+                    <p>
+                      It is worth mentioning that the most important viscosity parameter in our model is n. This parameter n gives us information about the dependence of the viscosity on the shear rate; the shape of the curve. m, on the other hand, is a simple prefactor that moves the viscosity along the vertical axis without a more relevant meaning. 
+                    </p>
+                      <h4>Experimental setup</h4>
+                      <img src="/images/blood_classification/bc_experimental_system.jpg" alt="Experimental system" class="img-fluid"/>  
+                      <p>Schematic representation of the microfluidic setup where the pressure difference is set by a pressure pump and the data is collected in a computer. Image extracted from reference [2]</p>
+                  </div>
+              </div>
+              <div class="row mt-1 mb-5">
+                  <div class="col">
+                    <h3>Model results</h3>
+                    <p>
+                      We have 117 blood samples with the corresponding plasma measurements from which we can extract their viscosity values as a function of the shear rate. By fitting the experimental data, we characterize each blood and plasma sample by (m, n) pairs. From them, we can derive the hematocrit normalized m and n; m<sub>htc</sub>, n<sub>htc</sub>.
+                    </p>
+                    <p>
+                      In the following image, we represent the hematocrit-normalized viscosity in a log-log scale as a function of the shear rate for healthy and non-healthy samples. In solid, we have painted the curve representing the mean of each category, and we shaded all the area that fits into one standard deviation of the mean curve.
+                    </p>    
+                    <img src="/images/blood_classification/bc_binary-results.png" alt="" class="img-fluid"/>
+                    <p><br>
+                      Next, we show in different graphs all curves for each blood condition on a log-log scale. We do it this way because of the overlapping between curves corresponding to different pathologies. </p>
+                    <p>
+                      <br>Note that these graphs only display information on the hematocrit-normalized viscosity. 
+                    </p>
+                  </div>
+                  <div class="col">
+                      <h4><br></h4>
+                      <img src="/images/blood_classification/bc_results_of-all-classes.png" alt="Curves of all clas" class="img-fluid"/>  
+                      <p>Hematocrit-normalized viscosity curves for healthy blood and different diseases on a log-log scale.</p>
+                  </div>
+              </div>
+              <div class="row mt-5">
+                <h2>Machine Learning</h2>
+              </div>
+              <div class="row mt-3 mb-5">
+                  <div class="col">
+                      <h3>Classification modelling overview</h3>                        
+                      <p>
+                        We have done all measurements and characterisations to predict the blood sample state for a given set of characterisation parameters(hematocrit, m and n in our case). Therefore, we will train a model to best map examples of input data to specific blood state labels. We can classify our blood samples into two main groups: healthy and non-healthy samples (binary classification). But because we know the condition of the patients and donors, we can also aim for multi-class classification.
+                      </p>                        
+                      <p>
+                        There are many different classification algorithms for classification problems. There is no good theory on mapping algorithms. Therefore, we used controlled experiments to discover which algorithm and algorithm configuration result in the best performance for a given classification task. Even if it is not perfect, classification accuracy is a popular metric used to evaluate the performance of a model based on the predicted class labels.
+                      </p>
+                  </div>
+                  <div class="col">
+                      <h4>ML models accuracies</h4>
+                      <p>We have fed to our Machine Learning algorithms the 4 viscosity related parameters: (m, n) and (m<sub>htc</sub>, n<sub>htc</sub>). From the 117 processed samples, we have split the training and the test with 81 and 36 samples each. </p>
+                      <table id="MachineLearningPerformance" class="table table-hover table-light table-responsive-sm">
+                        <thead class="bg-gradient">
+                          <tr>
+                            <th scope="col">ML Method</th>
+                            <th scope="col">TP</th>
+                            <th scope="col">FP</th>
+                            <th scope="col">FN</th>
+                            <th scope="col">TN</th>
+                            <th scope="col">Accuracy</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Logistic Regression</th>
+                            <td>14</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>17</td>
+                            <td>0.86</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">K-Nearest Neighbours</th>
+                            <td>13</td>
+                            <td>4</td>
+                            <td>10</td>
+                            <td>9</td>
+                            <td>0.61</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Classification Tree</th>
+                            <td>13</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>15</td>
+                            <td>0.78</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Random Forest</th>
+                            <td>13</td>
+                            <td>4</td>
+                            <td>2</td>
+                            <td>17</td>
+                            <td>0.83</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col">
+                        <img src="/images/blood_classification/bc_decision_tree_boundary_depth1.png" alt="Static environment" class="img-fluid"/>
+                    </div>
+                    <div class="col">
+                        <h3>Boundaries of Classification Tree (depth 1)</h3>
+                        <p>Decision Trees are among the simplest algorithms to understand, are easy to visualize and implement, and do not require much computation. While simple and easy to interpret, they can classify categories from datasets that a single line cannot separate. The decision tree uses Entropy to find the split point and the feature to split on. </p>
+                        <p>These decision boundaries are always parallel to the axis because it splits the data iteratively based on a feature value - and this value remains constant throughout the boundary. Therefore, it is helpful to take two features at a time to plot the 2D graphs to visualise results and contours in 2D.</p>
+                        <p>In the example on the left, the first decision boundary is at n_{htc}=0.012. Since now we have two decision regions, our tree ramifies to two new different nodes of the tree for each region. And regions are iteratively split until regions contain a significant majority of one class over the rest.</p>
+                        <p>However, Decision Trees present many disadvantages. We will easily develop an over-fitted model if we do not set a stopping criterion - tree-depth, minimum of instances per node, etc. Besides, decision trees are sensitive to data rotation as they make parallel-axis decisions.</p>
+                    </div>
+                </div>
+              </div>
+              <!--
+              <div class="row align-items-center">
+                  <div class="col">
+                      <img src="/images/ang5_staticECM.png" alt="Static environment" class="img-fluid"/>
+                  </div>
+                  <div class="col">
+                      <h3>Static environment</h3>
+                      <p>Collective cell migration, with a small spherical reservoir and initial condition, through an open path with no extracellular matrix degradation.</p>
+                  </div>
+              </div>
+              <div class="row align-items-center">
+                  <div class="col">
+                      <img src="/images/ang6_dynamicECMmodification.png" alt="Dynamic environment" class="img-fluid"/>
+                  </div>
+                  <div class="col">
+                      <h3>Dynamic environment: degradation</h3>
+                      <p>The collective cell migration can sense the densest regions of the extracellular matrix and avoid them while breaking down and migrating through lower extracellular matrix dense regions in the system.</p>
+                  </div>
+              </div>-->
+            </div>
+          </section>
+          <!-- End About the project section -->
+          <!-- Hero section -->
+          <section id="hero">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <h3>Implementation tools and techniques used for the project</h3>                
+                </div>
+              </div>
+              <div class="row cards mt-2 justify-content-center">
+                <div class="col-md-3 dflex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <img src="/images/python-logo-icon.svg" alt="should be icon" class="icon"/>
+                          <h5 class="card-title">Python</h5>
+                          <p class="card-text">Object-oriented programming language with a huge ecosystem.</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-3 dflex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <img src="/images/pandas-logo-icon.svg" alt="pandas icon" class="icon"/>
+                          <h5 class="card-title">Pandas library</h5>
+                          <p class="card-text">Open-source library that provides tools for data analysis.</p>
+                      </div>
+                    </div>
+                </div>  
+                <div class="col-md-3 dflex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <img src="/images/numpy-logo-icon.svg" alt="numpy icon" class="icon"/>
+                          <h5 class="card-title">Numpy library</h5>
+                          <p class="card-text">Image Processing (mask positioning) and Finite-element methods</p>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-md-3 dflex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <img src="/images/scikit-learn-logo-icon.svg" alt="sklearn icon" class="icon"/>
+                          <h5 class="card-title">Sci-kit learn library</h5>
+                          <p class="card-text">Robust libary for machine learning in Python. </p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- End Hero section -->
+          
+          <!-- REFERENCES -->
+          <section>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8">
+                  <h3>REFERENCES</h3>                
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <ol>
+                    <li>M&eacutendez-Mora, L., Cabello-Fusar&eacutes, M., Ferr&eacute-Torres, J., Riera-Llobet, C., Lopez, S., Trejo-Soto, C., ... & Hernandez-Machado, A. (2021). Microrheometer for biofluidic analysis: electronic detection of the fluid-front advancement. Micromachines, 12(6), 726.</li>
+                    <li>M&eacutendez-Mora, L., Cabello-Fusar&eacutes, M., Ferr&eacute-Torres, J., Riera-Llobet, C., Krishnevskaya, E., Trejo-Soto, C., ... & Hernandez-Machado, A. (2021). Blood Rheological Characterization of β-Thalassemia Trait and Iron Deficiency Anemia Using Front Microrheometry. Frontiers in Physiology, 12.</li>
+                    <li>Benitez-Colominas, P. (2022). Machine Learning and statistical analysis for diagnosis of hematological diseases. Universitat de Barcelona. Bachelor's thesis.</li>
+                  </ol>       
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- END REFERENCES -->
+          <!-- Project section -->
+        <!--
+          <section>
+            <div class="container">
+                <div class="row align-items-center projects">
+                    <div class="col">
+                        <h1>Projects</h1>
+                        <p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.s</p>                        
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="card mb-3">
+                            <img src="/images/ECM_initial_condition.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Static environment</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Dynamic degradation</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                            <img src="/images/Fig2_A_Fig2_synthesized_ECM_centerstack.png" class="card-img-bottom" alt="...">
+                            </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+        -->
+          <!-- Project section --> 
+          <!-- Contact us -->
+          <section id="contact">
+            <div class="container">
+                    <div class="col">
+                      <p>
+                        If you want to know more about this work, extend it or collaborate
+                      </p>
+                      <h1>Contact me</h1>
+                      <p>
+                        <i class="fas fa-envelope mr-3"></i> josep.ferre@fmc.ub.edu
+                      </p>
+                    </div>
+                </div>
+            </div>
+          </section>
+          <!-- End Contact us -->
+    </body>
+</html>
