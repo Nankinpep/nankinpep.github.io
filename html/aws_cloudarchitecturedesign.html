@@ -117,14 +117,25 @@
                 <h2>Architecture Design</h2>
               </div>
               <div class="row mt-3">
-                <p>The architecture presented here has many services. It is advisable to use Terraform to deploy all these services. Terraform allows writing the infrastructure as code using declarative configuration files.</p>
+                <p>The architecture presented here has many services hosted and managed by AWS, which means the architecture is also quite pricer. Besides, due to the amount of services, it is advisable to use Terraform to deploy all these services. Terraform allows writing the infrastructure as code using declarative configuration files.</p>
               </div>
               <div class="row mt-3 mb-5">
                   <div class="col">
                     <img src="/images/aws_architecture/aws_Architecture_design.png" alt="Cloud Architecture Design" class="img-fluid"/>
                   </div>
               </div>
-            </div>
+              <div class="row mt-5">
+                <h3>SIMPLIFIED (AND CHEAPER) ARCHITECTURE DESIGN</h3>
+              </div>
+              <div class="row mt-3">
+                <p>This simplified architecture avoids the use of AWS hosted services by using the trigger functionalities by using a single data lake (Amazon S3) and further developing custom code to process the message received from the IoT device.</p>
+              </div>
+              <div class="row mt-3 mb-5">
+                  <div class="col">
+                    <img src="/images/aws_architecture/aws_simplified_Architecture_design.png" alt="Simplified cloud Architecture Design" class="img-fluid"/>
+                  </div>
+              </div>
+          </div>
           </section>
           <!-- End About the project section -->
 
